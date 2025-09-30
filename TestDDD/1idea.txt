@@ -1,0 +1,58 @@
+﻿todo list : 
+    -  tareas(entidad) 
+    -  usuarios(entidad)
+    
+    
+reglas del negocio : 
+    - un usuario no puede tener mas de 2 tareas activas 
+    - un usuario no puede tener mas de 5 tareas vivas
+     
+casos de uso : 
+    - crear tarea 
+    - editar tarea
+    - eliminar tare
+    - crear usuario
+    - eliminar usuario
+    - mostrar tarea/s
+    - mostrar usario/s
+    
+
+Services : 
+Entiendo que los servicios son fragmentos de codigo que satisfacen necesidades del dominio que no se centran en una sola entidad,
+si debo crear una tarea, crear una instancia de la clase task si es algo que pertenece solo a la clase Task pero debo asociarla a un usuario
+debo validar que no tengo otras 2 runing... el proceso de crear task involucra logica de distintas entidades y por tanto debe ir en una capa 
+distinta
+
+Repository: 
+Es un patron en base al cual generamos codigo para acceder a datos, desde fuera del archivo repository nunca sabremos de que forma se estan manipulando
+esos datos solo los recibiremos
+
+Diferencia hay entre persistance y repositiories : 
+En persistance se configura y establece la conexion con la db y en repositories, existe la implementacion concreta de esta 
+
+Infrestructura es :
+La capa tecnica que soporta la aplicacion, aquellos desarrollos de "cosas tecnicas" aisaladas del dominio, ej: 
+conexiones con APIs - Conexiones a bases de datos - Registro de logs 
+
+Domain : 
+Es el nucleo del proyecto, el negocio que requiere el desarrollo que llevaremos acabo y que va a establecer tanto 
+necesidades como limites.
+
+BuisnessRules :
+Es la representacion en codigo de los requerimientos del dominio, cuando estos requerimientos involucran solo a una 
+entidad entonces se definen de manera interna en su clase, pero cuando abarcan mas entidades (crear una tare pero
+debe pasar por validaciones basadas en el usuario...) entonces se generan en un archivo aislado y son llamadas a traves
+de un servicio 
+
+Preguntas : 
+- que es static 
+- que es async / await 
+- que es change tracker
+- que es una dependencia
+- que es la inyecion de dependencias 
+- que es el Task y  que es el action result
+- lifetimes: Singleton, transcient, scoped
+-program.cs
+
+TODO ignacio -- un metodo para acceder a modificar el estado de cada tarea
+
