@@ -8,7 +8,7 @@ public interface IUserRepository
 {
     Task<User?> AddUser(CreateUserRequest request);
     Task<User?> GetUserById(int userId);
-    void AssignTaskToUser(User user, TodoItem task);
+    Task AssignTaskToUser(User user, TodoItem task);
     Task<ActionResult<IEnumerable<User>>> GetAllUsers();
 
 }

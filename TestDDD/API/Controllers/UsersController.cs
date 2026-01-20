@@ -41,7 +41,7 @@ public class UsersController : ControllerBase
     [HttpPut("assign-task/{userId}/{taskId}")]
     public async Task<bool> AssignTaskToUser(int userId, int taskId)
     {
-        var response = await _userServices.AssignTask(taskId, userId);
+        var response = await _userServices.AssignTask(userId, taskId);
         return response;
     }
     [HttpGet("get-all-users")]

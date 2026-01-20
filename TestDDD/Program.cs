@@ -29,7 +29,10 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<TodoDbContext>();
-    db.Database.Migrate();
+    if (!app.Environment.IsEnvironment("Testing"))
+    {
+        //db.Database.Migrate();
+    }
 }
 
 // Configuración del pipeline

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using TestDDD.API.DTOs;
 using TestDDD.Domain.Entities;
 using TestDDD.Domain.Repositories;
@@ -26,8 +27,9 @@ public class UserRepository : IUserRepository
         return user;
     }
 
-    public async void AssignTaskToUser(User user, TodoItem task)
+    public async Task AssignTaskToUser(User user, TodoItem task)
     {
+        Console.WriteLine(user);
         user.Tasks.Add(task);
         await _context.SaveChangesAsync();
     }

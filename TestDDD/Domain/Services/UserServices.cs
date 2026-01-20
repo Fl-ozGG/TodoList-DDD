@@ -19,14 +19,9 @@ public class UserServices(IUserRepository userRepository, ITodoRepository todoRe
     
     public async Task<bool> AssignTask(int userId, int taskId)
     {
-        
         var user = await userRepository.GetUserById(userId);
         var task = await todoRepository.GetTaskById(taskId);
-        if (user == null || task == null || !user.HasLessThanThreeTasksRunning() || !user.HasLessThanFiveTasksAlive()) 
-        {
-            return false;
-        }
-        userRepository.AssignTaskToUser(user, task);
+        await userRepository.AssignTaskToUser(user, task);
         return true;
     }
 

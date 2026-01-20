@@ -52,7 +52,8 @@ Preguntas :
 - que es la inyecion de dependencias 
 - que es el Task y  que es el action result
 - lifetimes: Singleton, transcient, scoped
--program.cs
+- program.cs
+- mediator 
 
 TODO ignacio -- un metodo para acceder a modificar el estado de cada tarea
 

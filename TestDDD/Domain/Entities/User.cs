@@ -4,6 +4,7 @@ namespace TestDDD.Domain.Entities;
 
 public class User
 {
+    
     public User(string username)
     {
         Username = username;
